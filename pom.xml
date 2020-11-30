@@ -4,11 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.adaptavist.tm4j</groupId>
-    <artifactId>tm4j-cucumber-integration-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
+     <groupId>com.adaptavist.tm4j</groupId>
+     <artifactId>tm4j-cucumber-integration-example</artifactId>
+     <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+
+                <configuration>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>com.adaptavist.tm4j.junit.ExecutionListener</value>
+                        </property>
+                    </properties>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
     <dependencies>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -30,5 +52,12 @@
             <artifactId>gherkin</artifactId>
             <version>5.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.adaptavist</groupId>
+            <artifactId>tm4j-junit-integration</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
 </project>

@@ -1,6 +1,6 @@
 Feature: Calculator Subtract
 
-  @TestCaseKey=WEB-T16
+  @TestCaseKey=CC-T29
   Scenario Outline: Subtract two numbers
     Given a calculator I just turned on
     Then I subtract <a> and <b> and the result is <c>
